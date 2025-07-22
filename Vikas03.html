@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>5th Class Admission Form</title>
+  <meta charset="UTF-8">
+</head>
+<body style="font-family: Arial; padding: 20px; background-color: #f9f9f9;">
+
+  <h2>📝 5th Class Admission Form</h2>
+
+  <form onsubmit="showData(); return false;" style="max-width: 400px;">
+    
+    <label>Full Name:</label><br>
+    <input type="text" name="fullname" required><br><br>
+    
+    <label>Date of Birth:</label><br>
+    <input type="date" name="dob" required><br><br>
+    
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other<br><br>
+
+    <label>Father's Name:</label><br>
+    <input type="text" name="fathername" required><br><br>
+
+    <label>Mother's Name:</label><br>
+    <input type="text" name="mothername" required><br><br>
+
+    <label>Mobile Number:</label><br>
+    <input type="tel" name="mobile" pattern="[0-9]{10}" required><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="address" rows="3" cols="30" required></textarea><br><br>
+
+    <label>Previous School Name:</label><br>
+    <input type="text" name="previousschool"><br><br>
+
+    <input type="submit" value="Submit Form" style="padding: 8px 20px; background-color: #4CAF50; color: white; border: none;">
+  </form>
+
+  <script>
+    function showData() {
+      let name = document.querySelector('input[name="fullname"]').value;
+      let dob = document.querySelector('input[name="dob"]').value;
+      let gender = document.querySelector('input[name="gender"]:checked')?.value || "Not selected";
+      let father = document.querySelector('input[name="fathername"]').value;
+      let mother = document.querySelector('input[name="mothername"]').value;
+      let mobile = document.querySelector('input[name="mobile"]').value;
+      let address = document.querySelector('textarea[name="address"]').value;
+      let school = document.querySelector('input[name="previousschool"]').value;
+
+      alert(
+        "📋 Admission Form Data:\n\n" +
+        "👦 Full Name: " + name + "\n" +
+        "📅 Date of Birth: " + dob + "\n" +
+        "⚧️ Gender: " + gender + "\n" +
+        "👨 Father's Name: " + father + "\n" +
+        "👩 Mother's Name: " + mother + "\n" +
+        "📱 Mobile Number: " + mobile + "\n" +
+        "🏠 Address: " + address + "\n" +
+        "🏫 Previous School: " + school
+      );
+    }
+  </script>
+
+</body>
+</html>
